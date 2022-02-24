@@ -1,1 +1,243 @@
+ gcc -g p5final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9c7: file p5final.c, line 40.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p5final.c:40
+40  {
+(gdb) n
+41    int x=input();
+(gdb) s
+input () at p5final.c:4
+4   {
+(gdb) n
+6     printf("Enter the number\n");
+(gdb) n
+Enter the number
+7     scanf("%d",&n);
+(gdb) n
+10
+8     return n;
+(gdb) p n
+$1 = 10
+(gdb) n
+9   }
+(gdb) n
+main () at p5final.c:42
+42    int a[x];
+(gdb) n
+43    init_array(x,a);
+(gdb) s
+init_array (n=10, a=0x7ffd9dd058b0) at p5final.c:13
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$2 = 0
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$3 = 1
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$4 = 2
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$5 = 3
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$6 = 4
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$7 = 5
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$8 = 6
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$9 = 7
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$10 = 8
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+14      a[i] = i;
+(gdb) p i
+$11 = 9
+(gdb) n
+13    for(int i=0;i<n;i++)
+(gdb) n
+15    a[1]=0;
+(gdb) p i
+No symbol "i" in current context.
+(gdb) n
+16  }
+(gdb) n
+main () at p5final.c:44
+44    ets(x,a);
+(gdb) s
+ets (n=10, a=0x7ffd9dd058b0) at p5final.c:20
+20     int i=0;
+(gdb) n
+21     while(i<=sqrt(n)) {
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+24       a[k]=0;
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+24       a[k]=0;
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+24       a[k]=0;
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+25     i++;
+(gdb) n
+21     while(i<=sqrt(n)) {
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+24       a[k]=0;
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+24       a[k]=0;
+(gdb) n
+23     for(int k = i+i; k < n ; k+=i)
+(gdb) n
+25     i++;
+(gdb) n
+21     while(i<=sqrt(n)) {
+(gdb) n
+27  }
+(gdb) n
+main () at p5final.c:45
+45    output(x,a);
+(gdb) s
+output (n=10, a=0x7ffd9dd058b0) at p5final.c:30
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) p i
+$12 = 1
+(gdb) p a[1]
+$13 = 0
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) p a[2]
+$14 = 2
+(gdb) n
+34          printf("%d ",a[i]);   
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) n
+34          printf("%d ",a[i]);   
+(gdb) p a[3]
+$15 = 3
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) p a[4]
+$16 = 0
+(gdb) n
+32        if(a[i]!=0)
+(gdb) n
+34          printf("%d ",a[i]);   
+(gdb) p a[5]
+$17 = 5
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) p a[6]
+$18 = 0
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) p a[7]
+$19 = 7
+(gdb) n
+34          printf("%d ",a[i]);   
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) p a[8]
+$20 = 0
+(gdb) n
+32        if(a[i]!=0)
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+32        if(a[i]!=0)
+(gdb) p a[9]
+$21 = 0
+(gdb) n
+30    for(int i=0;i<n;i++)
+(gdb) n
+37    printf("\n");
+(gdb) n
+2 3 5 7 
+38  }
+(gdb) n
+main () at p5final.c:46
+46    return 0;
+(gdb) n
+47  }
+(gdb) n

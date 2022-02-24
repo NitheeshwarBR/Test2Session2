@@ -1,1 +1,95 @@
+ gcc -g p7final.c -lm
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x996: file p7final.c, line 39.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p7final.c:39
+39  {
+(gdb) n
+41    x=input_line();
+(gdb) s
+input_line () at p7final.c:26
+26    l.p1=input_point();
+(gdb) s
+input_point () at p7final.c:17
+17  {
+(gdb) n
+19    printf("Enter the Points\n");
+(gdb) n
+Enter the Points
+20    scanf("%f %f",&n.x,&n.y);
+(gdb) n
+1
+2
+21    return n;
+(gdb) p n
+$1 = {x = 1, y = 2}
+(gdb) n
+22  }
+(gdb) n
+input_line () at p7final.c:27
+27    l.p2=input_point();
+(gdb) s
+input_point () at p7final.c:17
+17  {
+(gdb) n
+19    printf("Enter the Points\n");
+(gdb) n
+Enter the Points
+20    scanf("%f %f",&n.x,&n.y);
+(gdb) n
+1
+4
+21    return n;
+(gdb) p n
+$2 = {x = 1, y = 4}
+(gdb) n
+22  }
+(gdb) n
+input_line () at p7final.c:28
+28    return l;
+(gdb) p l
+$3 = {p1 = {x = 1, y = 2}, p2 = {x = 1, y = 4}, distance = 1.26116862e-44}
+(gdb) n
+29  }
+(gdb) n
+main () at p7final.c:42
+42    find_length(&x);
+(gdb) s
+find_length (l=0x7ffc4e9d33c0) at p7final.c:32
+32    l->distance=sqrt(pow((l->p2.x)-(l->p1.x),2)+pow((l->p2.y)-(l->p1.y),2));
+(gdb) n
+33  }
+(gdb) n
+main () at p7final.c:43
+43    output(x);
+(gdb) s
+output (l=...) at p7final.c:36
+36    printf("the length of the line with the points(%f,%f) ,(%f,%f) is %f\n",l.p1.x,l.p2.x,l.p1.y,l.p2.y,l.distance);
+(gdb) n
+the length of the line with the points(1.000000,1.000000) ,(2.000000,4.000000) is 2.000000
+37  }
+(gdb) n
+main () at p7final.c:44
+44    return 0;
+(gdb) n
+45  }
+(gdb) n

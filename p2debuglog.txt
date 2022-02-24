@@ -1,1 +1,74 @@
+ 
+ gcc -g p2final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8e2: file p2final.c, line 25.
+(gdb) r
+Starting program: /home/runner/Test2Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p2final.c:25
+25  {
+(gdb) n
+28    input_triangle(&a,&b,&c,&d,&e,&f);
+(gdb) s
+input_triangle (x1=0x7ffda062e23c, y1=0x7ffda062e240, 
+    x2=0x7ffda062e244, y2=0x7ffda062e248, x3=0x7ffda062e24c, 
+    y3=0x7ffda062e250) at p2final.c:5
+5     printf("Enter the points of the triangle as(x,y)\n");
+(gdb) n
+Enter the points of the triangle as(x,y)
+6     scanf("%f %f %f %f %f %f",x1,y1,x2,y2,x3,y3);
+(gdb) n
+1
+4
+5
+8
+9
+7
+7   }
+(gdb) n
+main () at p2final.c:29
+29    area=is_triangle(a,b,c,d,e,f);
+(gdb) s
+is_triangle (x1=1, y1=4, x2=5, y2=8, x3=9, y3=7) at p2final.c:11
+11    area=0.5*(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2));
+(gdb) n
+12    return area;
+(gdb) p area
+$1 = -10
+(gdb) n
+13  }
+(gdb) n
+main () at p2final.c:30
+30    output(a,b,c,d,e,f,area);
+(gdb) s
+output (x1=1, x2=4, x3=5, y1=8, y2=9, y3=7, is_triangle=-10)
+    at p2final.c:16
+16    if(is_triangle<=0)
+(gdb) n
+18      printf("the points with (%f,%f),(%f,%f) and (%f,%f) does not form a triangle\n",x1,y1,x2,y2,x3,y3);
+(gdb) n
+the points with (1.000000,8.000000),(4.000000,9.000000) and (5.000000,7.000000) does not form a triangle
+23  }
+(gdb) n
+main () at p2final.c:31
+31    return 0;
+(gdb) n
+32  }
+(gdb) n
